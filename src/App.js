@@ -47,11 +47,11 @@ export default function App() {
         onChange={(e) => setDifference(e.target.value)}
       />
       <br />
-      {/* <StrikePriceFilter
+      <StrikePriceFilter
         underlyingPrice={underlyingPrice}
         numberOfPrices={numberOfPrices}
         difference={difference}
-      /> */}
+      />
 
       <StrikePricesFilter2
         underlyingPrice={underlyingPrice}

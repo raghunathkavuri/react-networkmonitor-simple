@@ -35,7 +35,9 @@ function StrikePriceFilter({ underlyingPrice, numberOfPrices, difference }) {
   return (
     <ul>
       {strikePrices.map((price, index) => (
-        <li key={index}>{price}</li>
+        <li key={index}>
+          {index + 1}) {price}
+        </li>
       ))}
     </ul>
   );
