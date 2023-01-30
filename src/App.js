@@ -2,12 +2,17 @@ import React from 'react';
 import './style.css';
 
 import useOnline from './onlinestatus';
+import StrikePriceFilter from './StrikePriceFilter';
 
 export default function App() {
   const online = useOnline();
 
   return (
     <div>
+      <div>
+        <StrikePriceFilter />
+      </div>
+
       <h3 class="ui center aligned icon header">
         <i class="circular plug icon"></i>
         React network Monitor
