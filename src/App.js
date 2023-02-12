@@ -5,7 +5,21 @@ import useOnline from './onlinestatus';
 import StrikePriceFilter from './StrikePriceFilter';
 import StrikePricesFilter2 from './StrikePricesFilter2';
 
+import ChildComponent1 from './components/ChildComponent1';
+// import ChildComponent2 from './componets/ChildComponent2';
+
+import Component1 from './components/Component1';
+import Component2 from './components/Component2';
+
+import useIndex from './hooks/useIndex';
+
 export default function App() {
+  const [setIndex, selectedItemvalue] = useIndex();
+
+  const handleChangeIndex = (newIndex) => {
+    setIndex(newIndex);
+  };
+
   const online = useOnline();
 
   const [underlyingPrice, setUnderlyingPrice] = useState(17456);
@@ -26,7 +40,14 @@ export default function App() {
 
   return (
     <div>
-      <label>Underlying Price:</label>
+      <div>
+        {/* <ChildComponent1 /> */}
+
+        <Component1 item={selectedItemvalue} />
+        <Component2 changeIndex={handleChangeIndex} />
+      </div>
+
+      {/* <label>Underlying Price:</label>
       <input
         type="number"
         value={underlyingPrice}
@@ -79,7 +100,7 @@ export default function App() {
             </div>
           )}
         </span>{' '}
-      </div>
+      </div> */}
     </div>
   );
 }
